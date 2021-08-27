@@ -1,12 +1,18 @@
 function Employee(f, l) {
     this.firstName = f;
     this.lastName = l;
+	this.dept=function (id)
+	{
+		this.deptId=id
+	}
 }
-
-function Dept(id) {
-    this.id = id;
+// dept is associated with  Employee as well as every employee object
+var emp1=new Employee("Nikhil" ,"Mohan")
+emp1.dept(12);
+console.log(emp1.deptId);
+Employee.prototype.Salary=function(salary)
+{
+	console.log(salary);
 }
-emp = new Employee("Nikhil", "Mohan");
-dept = new Dept(1);
-dept.prototype = emp
-console.log(dept.prototype.firstName)
+console.log(emp1)
+console.log(Employee)
