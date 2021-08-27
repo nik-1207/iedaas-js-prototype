@@ -4,10 +4,11 @@ function dept(deptName, deptId) {
 }
 
 function Employee(f, l, deptName, deptId) {
+    dept.call(this, deptName, deptId);
     this.firstName = f;
     this.lastName = l;
-    dept.call(this, deptName, deptId);
 }
 Employee.prototype = new dept;
+Employee.prototype.constructor = Employee;
 var emp1 = new Employee("nikhil", "Mohan", "cse", "007");
-console.log(emp1.firstName)
+console.log(emp1.constructor)
